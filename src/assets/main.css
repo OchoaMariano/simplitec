@@ -1,0 +1,218 @@
+@import "./base.css";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+@import '../../node_modules/vue-stripe-menu/dist/vue-stripe-menu.css';
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+
+  /* CONTENEDORES */
+  .contenedor__base {
+    @apply px-5 xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto
+  }
+
+  /* TEXTO */
+  .text__paragraph {
+    @apply text-sm sm:text-base lg:text-xl 2xl:text-2xl text-textGris font-thin
+  }
+  .text__paragraph__dark {
+    @apply text-sm sm:text-base lg:text-xl 2xl:text-2x text-white
+  }
+  .title__h1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-primaryBlue leading-tight
+  }
+  .title__h1__white {
+    @apply text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-white 
+  }
+
+  /* TEXT CLASSES (by Juan) */
+  /* Solamente especifico los distintos fontSizes y quizas algo mas como el line height. */
+  /* El textColor se lo agregamos directamente a partir de la clase (text-white text-textGris text-primary... etc) */
+  .simple-text {
+    @apply text-sm sm:text-base lg:text-xl font-thin
+  }
+
+  .title {
+    @apply text-3xl sm:text-4xl lg:text-5xl leading-tight
+  }
+
+  .subtitle {
+    @apply text-xl sm:text-2xl lg:text-3xl leading-tight
+  }
+
+
+  /* BOTONES */
+  .btn__primary {
+    @apply text-xs sm:text-sm lg:text-lg 2xl:text-xl text-primaryBlue uppercase 
+    px-6 py-2 rounded-full border border-cyan
+    bg-gradient-to-r hover:text-white hover:from-cyan hover:to-secondaryBlue
+  }
+  .btn__secondary {
+    @apply text-xs sm:text-sm lg:text-lg 2xl:text-xl text-primaryBlue uppercase 
+    px-6 py-2 rounded-full bg-white
+    bg-gradient-to-r hover:text-white hover:from-cyan hover:to-secondaryBlue
+  }
+
+  /* NAV LINKS ITEMS */
+  .nav__link {
+    @apply text-primaryBlue font-normal text-xl
+  }
+
+  /* ELEMENTOS */
+  .bg-gradient {
+    @apply bg-gradient-to-r from-cyan to-secondaryBlue
+  }
+  .gradient__divider {
+    @apply w-full bg-gradient-to-r from-cyan to-secondaryBlue h-0.5 my-2
+  }
+  .gradient__left__decoration {
+    @apply absolute top-0 bottom-0 left-0 w-6 bg-gradient-to-b from-cyan to-secondaryBlue opacity-90
+  }
+
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+
+  /* PARTNERS SWIPER */
+  .swiper .swiper-slide-active .group {
+    @apply !border-blue-500 !text-primaryBlue !shadow-xl
+
+  }
+
+  .swiper .swiper-slide-active .group svg {
+    @apply text-primaryBlue 
+
+  }
+}
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.smooth {
+  transition: all ease-in-out 0.5s;
+}
+
+
+.vsm-menu {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.vsm-link-container {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 1024px) {
+  .vsm-mob-show {
+    display: block;
+  }
+  .vsm-mob-hide {
+    display: none;
+  }
+  .vsm-mob-full {
+    flex-grow: 1;
+  }
+}
+
+.vsm-root {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+}
+
+.cool-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(45deg, #00C5E6, #569FD6);
+  transition: width .2s;
+}
+
+.cool-link:hover::after {
+  width: 100%;
+  transition: width .3s;
+}
+
+.vsm-mob-content__wrap {
+  box-shadow: 0 50px 100px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%), 0 -18px 60px -10px rgb(0 0 0 / 3%); 
+  border-radius: 4px;
+  overflow: visible;
+}
+
+.vsm-mob-close {
+  z-index: 50;
+}
+
+.w-mobile-menu {
+  
+}
+.vsm-mob-container {
+  border: 2px solid #569FD6;
+  border-radius: 50px;
+}
+.vsm-mob-line {
+  width: 28px;
+  height: 6px;
+  border: 2px solid #569FD6;
+  border-radius: 50px;
+  background: transparent;
+  transition: background .1s ease;
+}
+
+.vsm-mob-content {
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  right: 0px;
+  justify-content: flex-end;
+  perspective: 2000px;
+}
+
+.base-group {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px 0;
+}
+
+.base-group__content__title {
+  width: 100%;
+  height: 17px;
+  margin-bottom: 3px;
+  padding-top: 0;
+}
+
+.base-text {
+  padding: 5px 0;
+}
+
+.base-group__content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+
+.vsm-background {
+  border-radius: 0.5rem;
+}
+.vsm-dropdown-container {
+  overflow: hidden;
+  width: 500px;
+  top: 0;
+  transform: translateX(0);
+  will-change: transform,width,height;
+  border-radius: 0.5rem;
+  transition-property: transform,width,height;
+}
