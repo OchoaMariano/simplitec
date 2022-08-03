@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1 class="text-xl text-blue-600"></h1>
+    <h1 class="text-xl text-blue-600">test new deploy</h1>
   </div>
 </template>
 
